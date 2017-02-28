@@ -1,6 +1,6 @@
 # Vue Pack 2017
 
-[![Build status](https://ci.appveyor.com/api/projects/status/y20hsx8sjiaijld5?svg=true)](https://ci.appveyor.com/project/madskristensen/vuepack)
+[![Build status](https://ci.appveyor.com/api/projects/status/us0kd0r6tphv2djr?svg=true)](https://ci.appveyor.com/project/madskristensen/vuepack2017)
 
 Download this extension from the [VS Gallery](https://visualstudiogallery.msdn.microsoft.com/30fd019a-7b90-4f75-bb54-b8f49f18fbe1)
 or get the [CI build](http://vsixgallery.com/extension/4163aa08-9878-4b1c-a1ee-58ab67f7db5b/).
