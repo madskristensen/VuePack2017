@@ -10,7 +10,7 @@ namespace VuePack
 
         [Export(typeof(ContentTypeDefinition))]
         [Name(VueContentType)]
-        [BaseDefinition("htmlx")]
+        [BaseDefinition("HTML")]
         public ContentTypeDefinition IVueContentTypeDefinitionContentType { get; set; }
 
         [Export(typeof(FileExtensionToContentTypeDefinition))]
