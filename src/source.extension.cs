@@ -11,7 +11,7 @@ namespace VuePack
         public const string Name = "Vue.js Pack 2017";
         public const string Description = @"Contains HTML Intellisense and code snippets for the Vue.js JavaScript library";
         public const string Language = "en-US";
-        public const string Version = "1.0";
+        public const string Version = "1.1";
         public const string Author = "Mads Kristensen";
         public const string Tags = "vue.js, snippets, javascript";
     }

@@ -5,13 +5,8 @@ namespace VuePack
 {
     public class VueContentTypeDefinition
     {
-        public const string VueContentType = "Vue";
+        public const string VueContentType = "htmlx";
         private const string VueFileExtension = ".vue";
-
-        [Export(typeof(ContentTypeDefinition))]
-        [Name(VueContentType)]
-        [BaseDefinition("htmlx")]
-        public ContentTypeDefinition IVueContentTypeDefinitionContentType { get; set; }
 
         [Export(typeof(FileExtensionToContentTypeDefinition))]
         [ContentType(VueContentType)]

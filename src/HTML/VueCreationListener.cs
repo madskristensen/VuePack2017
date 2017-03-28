@@ -7,6 +7,7 @@ using Microsoft.VisualStudio.Text;
 using Microsoft.VisualStudio.Text.Editor;
 using Microsoft.VisualStudio.TextManager.Interop;
 using Microsoft.VisualStudio.Utilities;
+using System;
 
 namespace VuePack
 {
@@ -20,7 +21,7 @@ namespace VuePack
         public IVsEditorAdaptersFactoryService EditorAdaptersFactoryService { get; set; }
 
         [Import]
-        public ITextDocumentFactoryService TextDocumentFactoryService { get; set; }
+        public ITextDocumentFactoryService DocumentService { get; set; }
 
         private ITextDocument _document;
 
@@ -30,13 +31,13 @@ namespace VuePack
 
             // Both "Web Compiler" and "Bundler & Minifier" extensions add this property on their
             // generated output files. Generated output should be ignored from linting
-            bool generated;
-            if (textView.Properties.TryGetProperty("generated", out generated) && generated)
+            if (textView.Properties.TryGetProperty("generated", out bool generated) && generated)
                 return;
 
-            if (TextDocumentFactoryService.TryGetTextDocument(textView.TextDataModel.DocumentBuffer, out _document))
+            if (DocumentService.TryGetTextDocument(textView.TextDataModel.DocumentBuffer, out _document))
             {
-                _document.FileActionOccurred += DocumentSaved;
+                if (_document.FilePath.EndsWith(".vue", StringComparison.OrdinalIgnoreCase))
+                    _document.FileActionOccurred += DocumentSaved;
             }
         }
 
